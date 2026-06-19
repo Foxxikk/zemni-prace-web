@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import { technika } from "@/lib/site";
 
@@ -27,6 +28,11 @@ export default function Technika() {
           <div className="grid grid-2">
             {technika.map((m) => (
               <div key={m.name} className="machine">
+                {m.img && (
+                  <div className="machine-img">
+                    <Image src={m.img} alt={`${m.name} – ${m.type}`} fill sizes="(max-width: 900px) 100vw, 540px" style={{ objectFit: "cover" }} />
+                  </div>
+                )}
                 <span className="type">{m.type}</span>
                 <h3>{m.name}</h3>
                 <p>{m.use}</p>

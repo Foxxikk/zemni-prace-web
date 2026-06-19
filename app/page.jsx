@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
-import { site, sluzby, technika } from "@/lib/site";
+import { site, sluzby, technika, reference } from "@/lib/site";
 
 const why = [
   { num: "🚜", t: "Vlastní strojový park", d: "Traktorbagry JCB, pásové rypadlo CAT, minirypadlo Kubota – techniku vozíme vlastní." },
@@ -12,7 +13,7 @@ const why = [
 export default function Home() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-photo">
         <div className="container">
           <p className="eyebrow" style={{ color: "var(--accent)" }}>Zemní a výkopové práce · {site.region}</p>
           <h1>Zemní a výkopové práce na klíč v okrese Praha-východ</h1>
@@ -80,6 +81,9 @@ export default function Home() {
           <div className="grid grid-3" style={{ marginTop: 36 }}>
             {technika.slice(0, 3).map((m) => (
               <div key={m.name} className="machine">
+                <div className="machine-img">
+                  <Image src={m.img} alt={`${m.name} – ${m.type}`} fill sizes="(max-width: 900px) 100vw, 360px" style={{ objectFit: "cover" }} />
+                </div>
                 <span className="type">{m.type}</span>
                 <h3>{m.name}</h3>
                 <p>{m.use}</p>
@@ -93,6 +97,26 @@ export default function Home() {
       </section>
 
       <section className="section section-alt">
+        <div className="container">
+          <div className="center">
+            <p className="eyebrow">Naše práce</p>
+            <h2>Ukázky realizací</h2>
+            <p className="lead">Pár fotek z našich zakázek – výkopy, přípojky i terénní úpravy.</p>
+          </div>
+          <div className="gallery" style={{ marginTop: 36 }}>
+            {reference.slice(0, 6).map((r) => (
+              <Link key={r.src} className="tile" href="/reference" title={r.alt}>
+                <Image src={r.src} alt={r.alt} fill sizes="(max-width: 900px) 50vw, 360px" style={{ objectFit: "cover" }} />
+              </Link>
+            ))}
+          </div>
+          <div className="center" style={{ marginTop: 28 }}>
+            <Link className="btn btn-dark" href="/reference">Zobrazit všechny reference</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="center">
             <p className="eyebrow">Kde působíme</p>

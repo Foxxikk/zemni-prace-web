@@ -1,24 +1,13 @@
+import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
+import { reference } from "@/lib/site";
 
 export const metadata = {
   title: "Reference a galerie",
   description:
-    "Ukázky našich realizací – výkopy základů, přípojky, terénní úpravy a další zemní práce v okrese Praha-východ.",
+    "Ukázky našich realizací – výkopy základů, přípojky inženýrských sítí, terénní úpravy a další zemní práce v okrese Praha-východ.",
   alternates: { canonical: "/reference" },
 };
-
-// Placeholder dlaždice – po dodání fotek nahraďte komponentou <Image> a reálnými soubory.
-const tiles = [
-  "Výkop základů RD",
-  "Přípojky sítí",
-  "Hloubení bazénu",
-  "Terénní úpravy zahrady",
-  "Skrývka ornice",
-  "Výkop pro plot",
-  "Drenáže",
-  "Zahradní jezírko",
-  "Úprava terénu hřiště",
-];
 
 export default function Reference() {
   return (
@@ -28,7 +17,8 @@ export default function Reference() {
           <p className="breadcrumb">Úvod / Reference</p>
           <h1>Reference a galerie realizací</h1>
           <p className="lead">
-            Vybrané ukázky našich prací. Fotogalerii průběžně doplňujeme o nové zakázky.
+            Vybrané ukázky našich prací – výkopy, přípojky, terénní úpravy i odvoz materiálu.
+            Galerii průběžně doplňujeme o nové zakázky.
           </p>
         </div>
       </div>
@@ -36,13 +26,12 @@ export default function Reference() {
       <section className="section">
         <div className="container">
           <div className="gallery">
-            {tiles.map((t) => (
-              <div key={t} className="tile"><span>{t}</span></div>
+            {reference.map((r) => (
+              <a key={r.src} className="tile" href={r.src} target="_blank" rel="noopener noreferrer" title={r.alt}>
+                <Image src={r.src} alt={r.alt} fill sizes="(max-width: 900px) 50vw, 360px" style={{ objectFit: "cover" }} />
+              </a>
             ))}
           </div>
-          <p className="form-note" style={{ marginTop: 20 }}>
-            Ukázkové dlaždice – nahraďte reálnými fotografiemi realizací (viz README, sekce „Galerie").
-          </p>
         </div>
       </section>
 
