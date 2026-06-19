@@ -278,9 +278,10 @@ html[data-design="b"] .eyebrow {
 }
 html[data-design="b"] .eyebrow::before { content: "— "; }
 
-/* Tlačítka: bez zaoblení, ostřejší editorial styl */
-html[data-design="b"] .btn { border-radius: 2px; }
+/* Tlačítka: pilulkový editorial styl */
+html[data-design="b"] .btn { border-radius: 999px; padding: .72rem 1.5rem; }
 html[data-design="b"] .btn-primary { box-shadow: 0 6px 18px rgba(234,161,42,.35); }
+html[data-design="b"] .section { padding: 88px 0; }
 
 /* Header průhlednější, krémový */
 html[data-design="b"] .header {
@@ -335,7 +336,7 @@ html[data-design="b"] .hero-photo .eyebrow { color: var(--accent-600) !important
 html[data-design="b"] .hero-photo .btn-outline { color: var(--ink); }
 html[data-design="b"] .hero-art {
   display: block; position: relative; aspect-ratio: 4 / 5;
-  border-radius: 260px 260px 10px 10px; overflow: hidden;
+  border-radius: 12px; overflow: hidden;
   box-shadow: 0 24px 60px rgba(40,32,20,.22);
 }
 .hero-badge {
@@ -358,6 +359,24 @@ html[data-design="b"] .hero-art {
   content: "•"; color: rgba(0,0,0,.35); position: absolute; left: -18px;
 }
 
+/* ---- Služby jako accordion řádky (Design B) ---- */
+.svc-list { margin-top: 40px; gap: 14px; max-width: 860px; margin-left: auto; margin-right: auto; }
+html[data-design="b"] .svc-list { display: grid; }
+.svc-row {
+  display: flex; align-items: center; gap: 18px;
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 20px 24px; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.svc-row:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.svc-ico {
+  flex: none; width: 46px; height: 46px; border-radius: 6px;
+  background: #fff4e0; color: var(--accent-600); display: grid; place-items: center; font-size: 1.2rem;
+}
+.svc-body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.svc-body strong { font-family: "Playfair Display", Georgia, serif; font-size: 1.2rem; }
+.svc-body small { color: var(--ink-soft); font-size: .92rem; }
+.svc-arrow { flex: none; color: var(--accent-600); font-size: 1.3rem; font-weight: 700; }
+
 /* ---- Tmavé portfolio se střídavými kartami (Design B) ---- */
 .portfolio { background: var(--dark-2); color: #fff; padding: 92px 0; }
 .portfolio .eyebrow { color: var(--accent); }
@@ -379,7 +398,7 @@ html[data-design="b"] .hero-art {
 
 @media (max-width: 880px) {
   html[data-design="b"] .hero-grid { grid-template-columns: 1fr; }
-  html[data-design="b"] .hero-art { max-width: 420px; margin: 8px auto 0; aspect-ratio: 5 / 4; border-radius: 180px 180px 8px 8px; }
+  html[data-design="b"] .hero-art { max-width: 460px; margin: 8px auto 0; aspect-ratio: 5 / 4; border-radius: 12px; }
   .pf-row, .pf-row.reverse { grid-template-columns: 1fr; }
   .pf-row.reverse .pf-img { order: 0; }
   .pf-img { min-height: 240px; }

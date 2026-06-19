@@ -64,12 +64,24 @@ export default function Home() {
             <h2>Naše služby</h2>
             <p className="lead">Veškeré zemní a výkopové práce pro stavebníky, firmy i obce.</p>
           </div>
-          <div className="grid grid-3" style={{ marginTop: 36 }}>
+          <div className="grid grid-3 only-a" style={{ marginTop: 36 }}>
             {sluzby.map((s) => (
               <Link key={s.slug} href="/zemni-prace" className="card">
                 <div className="ico">▣</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="svc-list only-b">
+            {sluzby.map((s) => (
+              <Link key={s.slug} href="/zemni-prace" className="svc-row">
+                <span className="svc-ico">▣</span>
+                <span className="svc-body">
+                  <strong>{s.title}</strong>
+                  <small>{s.desc}</small>
+                </span>
+                <span className="svc-arrow">→</span>
               </Link>
             ))}
           </div>
