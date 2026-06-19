@@ -311,3 +311,77 @@ html[data-design="b"] .cta-band { border-radius: 6px; }
 /* Sekce s "Naše práce" – tmavé portfolio jako v referenci */
 html[data-design="b"] .section-alt { background: var(--bg-alt); }
 
+/* ---- Přepínání A/B prvků ---- */
+.only-b { display: none; }
+html[data-design="b"] .only-b { display: block; }
+html[data-design="b"] .only-a { display: none; }
+
+/* ---- HERO: v Designu B krémové editorial s obloukovou fotkou ---- */
+.hero-grid { display: block; }
+.hero-text { max-width: 100%; }
+.hero-art { display: none; }
+
+html[data-design="b"] .hero-photo {
+  background: var(--bg);
+  padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(48px, 6vw, 80px);
+}
+html[data-design="b"] .hero-grid {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center;
+}
+html[data-design="b"] .hero-photo h1 { color: var(--ink); }
+html[data-design="b"] .hero-photo .lead { color: var(--ink-soft); }
+html[data-design="b"] .hero-photo .hero-points { color: var(--ink-soft); }
+html[data-design="b"] .hero-photo .eyebrow { color: var(--accent-600) !important; }
+html[data-design="b"] .hero-photo .btn-outline { color: var(--ink); }
+html[data-design="b"] .hero-art {
+  display: block; position: relative; aspect-ratio: 4 / 5;
+  border-radius: 260px 260px 10px 10px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(40,32,20,.22);
+}
+.hero-badge {
+  position: absolute; left: 16px; bottom: 16px; z-index: 2;
+  background: var(--accent); color: #1c1a17; font-weight: 800;
+  padding: 10px 16px; border-radius: 4px; font-size: .9rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* ---- Amber pruh s kategoriemi (Design B) ---- */
+.cat-bar { background: var(--accent); }
+.cat-bar .container {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 32px;
+  padding: 16px 20px;
+}
+.cat-bar span {
+  color: #20242b; font-weight: 700; font-size: .98rem; position: relative;
+}
+.cat-bar span + span::before {
+  content: "•"; color: rgba(0,0,0,.35); position: absolute; left: -18px;
+}
+
+/* ---- Tmavé portfolio se střídavými kartami (Design B) ---- */
+.portfolio { background: var(--dark-2); color: #fff; padding: 92px 0; }
+.portfolio .eyebrow { color: var(--accent); }
+.portfolio-title { color: #fff; font-size: clamp(2.4rem, 5.5vw, 3.8rem); }
+.portfolio-rows { display: grid; gap: 26px; margin-top: 44px; }
+.pf-row {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+  background: #211e1a; border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px; overflow: hidden;
+}
+.pf-img { position: relative; min-height: 340px; }
+.pf-row.reverse .pf-img { order: 2; }
+.pf-text { padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; justify-content: center; }
+.pf-tag { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-size: .76rem; font-weight: 800; margin-bottom: 10px; }
+.pf-text h3 { color: #fff; font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin-bottom: .5rem; }
+.pf-text p { color: rgba(255,255,255,.72); margin: 0 0 18px; }
+.pf-link { color: #fff; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 2px; align-self: flex-start; }
+.pf-link:hover { color: var(--accent); }
+
+@media (max-width: 880px) {
+  html[data-design="b"] .hero-grid { grid-template-columns: 1fr; }
+  html[data-design="b"] .hero-art { max-width: 420px; margin: 8px auto 0; aspect-ratio: 5 / 4; border-radius: 180px 180px 8px 8px; }
+  .pf-row, .pf-row.reverse { grid-template-columns: 1fr; }
+  .pf-row.reverse .pf-img { order: 0; }
+  .pf-img { min-height: 240px; }
+}
+
