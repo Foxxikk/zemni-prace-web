@@ -33,6 +33,10 @@ export default function DesignSwitcher() {
           <span>Design B</span>
           <small>Editorial / patkové nadpisy</small>
         </button>
+        <button className={design === "c" ? "ds-opt active" : "ds-opt"} onClick={() => choose("c")}>
+          <span>Design C</span>
+          <small>Jednoduchý / mobil first</small>
+        </button>
         <p className="ds-note">Dočasná volba — po rozhodnutí ji odstraníme.</p>
       </div>
     </div>

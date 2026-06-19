@@ -91,9 +91,10 @@ app/globals.css              # styly
 
 ## Přepínač designu (dočasné)
 
-Vpravo dole je tlačítko **🎨 Design A / B** pro porovnání dvou vzhledů:
+Vpravo dole je tlačítko **🎨 Design** pro porovnání tří vzhledů:
 - **Design A** – moderní / minimalistický (výchozí)
 - **Design B** – editorial s patkovými nadpisy a krémovým laděním
+- **Design C** – jednoduchý, přehledný, mobile-first (spodní lišta s tlačítky na mobilu)
 
 Volba se ukládá do prohlížeče (localStorage) a platí na všech stránkách.
 

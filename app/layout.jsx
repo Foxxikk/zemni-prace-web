@@ -58,6 +58,11 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <Fab />
+        {/* Design C: spodní lišta s velkými tlačítky pro mobil */}
+        <div className="mobile-bar only-c">
+          <a className="btn btn-dark" href={site.phoneHref}>☎ Zavolat</a>
+          <a className="btn btn-primary" href="/kontakt">Poptávka</a>
+        </div>
         <DesignSwitcher />
         <script
           type="application/ld+json"
