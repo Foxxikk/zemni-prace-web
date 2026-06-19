@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
+
 :root {
   --bg: #ffffff;
   --bg-alt: #f5f6f7;
@@ -210,7 +212,102 @@ p { margin: 0 0 1rem; }
   .grid-3, .grid-2, .why, .gallery, .checklist, .field-row { grid-template-columns: 1fr; }
   .cta-band { flex-direction: column; align-items: flex-start; }
   .fab {
-    display: flex; position: fixed; right: 16px; bottom: 16px; z-index: 60;
+    display: flex; position: fixed; left: 16px; bottom: 16px; z-index: 60;
     box-shadow: 0 8px 24px rgba(0,0,0,.25);
   }
 }
+
+/* ============================================================
+   PŘEPÍNAČ DESIGNU (dočasné) – po výběru lze celé odstranit
+   ============================================================ */
+.design-switcher { position: fixed; right: 16px; bottom: 16px; z-index: 70; font-size: .9rem; }
+.ds-toggle {
+  background: #1c1b19; color: #fff; border: 0; cursor: pointer;
+  padding: .6rem 1rem; border-radius: 999px; font: inherit;
+  box-shadow: 0 8px 24px rgba(0,0,0,.28);
+}
+.ds-toggle strong { color: var(--accent); }
+.ds-panel {
+  display: none; position: absolute; right: 0; bottom: calc(100% + 10px);
+  width: 240px; background: #fff; color: var(--ink); border: 1px solid var(--line);
+  border-radius: 14px; padding: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.22);
+}
+.design-switcher.open .ds-panel { display: block; }
+.ds-title { font-weight: 700; margin: 0 0 10px; font-size: .92rem; }
+.ds-opt {
+  display: flex; flex-direction: column; align-items: flex-start; width: 100%;
+  text-align: left; gap: 2px; background: #f5f6f7; border: 2px solid transparent;
+  border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; font: inherit;
+}
+.ds-opt span { font-weight: 700; }
+.ds-opt small { color: var(--muted); }
+.ds-opt.active { border-color: var(--accent); background: #fff7ea; }
+.ds-note { margin: 6px 0 0; font-size: .76rem; color: var(--muted); }
+
+/* ============================================================
+   DESIGN B – editorial skin (aktivní přes <html data-design="b">)
+   ============================================================ */
+html[data-design="b"] {
+  --bg: #f7f3ec;
+  --bg-alt: #efe8dc;
+  --ink: #1c1a17;
+  --ink-soft: #544f46;
+  --muted: #8a8278;
+  --line: #e3dacb;
+  --dark: #1d1b18;
+  --dark-2: #161412;
+  --accent: #eaa12a;
+  --accent-600: #c9821a;
+  --accent-ink: #1c1a17;
+  --radius: 6px;
+  --shadow: 0 12px 34px rgba(40, 32, 20, 0.10);
+}
+html[data-design="b"] body { background: var(--bg); }
+html[data-design="b"] h1,
+html[data-design="b"] h2,
+html[data-design="b"] h3,
+html[data-design="b"] .cta-band h2,
+html[data-design="b"] .footer h4 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing: 0; font-weight: 700;
+}
+html[data-design="b"] h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.06; }
+html[data-design="b"] h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+html[data-design="b"] .eyebrow {
+  color: var(--accent-600); letter-spacing: .14em; font-size: .76rem;
+}
+html[data-design="b"] .eyebrow::before { content: "— "; }
+
+/* Tlačítka: bez zaoblení, ostřejší editorial styl */
+html[data-design="b"] .btn { border-radius: 2px; }
+html[data-design="b"] .btn-primary { box-shadow: 0 6px 18px rgba(234,161,42,.35); }
+
+/* Header průhlednější, krémový */
+html[data-design="b"] .header {
+  background: rgba(247,243,236,.9); border-bottom: 1px solid var(--line);
+}
+html[data-design="b"] .brand .mark { border-radius: 2px; }
+
+/* Hero – teplejší overlay, patkový nadpis */
+html[data-design="b"] .hero-photo {
+  background:
+    linear-gradient(180deg, rgba(28,22,14,.62), rgba(28,22,14,.78)),
+    url("/hero.webp");
+  background-size: cover; background-position: center;
+}
+
+/* Karty – ostřejší rohy, jemný okraj */
+html[data-design="b"] .card,
+html[data-design="b"] .machine,
+html[data-design="b"] .contact-box { border-radius: 4px; }
+html[data-design="b"] .card .ico { border-radius: 2px; }
+
+/* Galerie / portfolio – ostré rohy, výraznější rám */
+html[data-design="b"] .gallery .tile { border-radius: 3px; }
+
+/* CTA band – patkový nadpis, ostřejší blok */
+html[data-design="b"] .cta-band { border-radius: 6px; }
+
+/* Sekce s "Naše práce" – tmavé portfolio jako v referenci */
+html[data-design="b"] .section-alt { background: var(--bg-alt); }
+
