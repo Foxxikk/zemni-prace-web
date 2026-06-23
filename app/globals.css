@@ -196,6 +196,24 @@ p { margin: 0 0 1rem; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .tag { background: #fff4e0; color: var(--accent-600); padding: 4px 12px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
 
+/* Kompletní seznam prací v bodech (2–3 sloupce) */
+.work-list {
+  list-style: none; padding: 0; margin: 36px 0 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 32px;
+}
+.work-list li {
+  position: relative; padding: 8px 0 8px 30px;
+  border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 1.02rem;
+}
+.work-list li::before {
+  content: "✓"; position: absolute; left: 0; top: 8px;
+  color: var(--accent-600); font-weight: 900;
+}
+.work-note { margin-top: 22px; color: var(--muted); font-size: .95rem; }
+
+@media (max-width: 900px) { .work-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .work-list { grid-template-columns: 1fr; } }
+
 @media (max-width: 900px) {
   .grid-3, .why, .gallery { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
