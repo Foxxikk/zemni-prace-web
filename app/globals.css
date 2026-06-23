@@ -193,6 +193,16 @@ p { margin: 0 0 1rem; }
 .breadcrumb { color: var(--muted); font-size: .9rem; margin-bottom: .4rem; }
 
 .prose p { color: var(--ink-soft); max-width: 70ch; }
+
+/* Blog */
+.post-date { color: var(--accent-600); font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+.post-more { display: inline-block; margin-top: 12px; color: var(--accent-600); font-weight: 700; }
+.post-body { max-width: 760px; }
+.post-body h2 { font-size: 1.5rem; margin: 1.6rem 0 .6rem; }
+.post-body p { color: var(--ink-soft); max-width: 70ch; }
+.post-body ul, .post-body ol { color: var(--ink-soft); padding-left: 1.3rem; }
+.post-body li { margin: .3rem 0; }
+.post-body a { color: var(--accent-600); text-decoration: underline; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .tag { background: #fff4e0; color: var(--accent-600); padding: 4px 12px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
 

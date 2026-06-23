@@ -26,6 +26,7 @@ export default function Footer() {
               <Link href="/zemni-prace">Zemní práce</Link><br />
               <Link href="/technika">Technika</Link><br />
               <Link href="/reference">Reference</Link><br />
+              <Link href="/blog">Blog</Link><br />
               <Link href="/kontakt">Kontakt / poptávka</Link><br />
               <Link href="/ochrana-osobnich-udaju">Ochrana osobních údajů</Link>
             </p>

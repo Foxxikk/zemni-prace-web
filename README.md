@@ -89,6 +89,33 @@ lib/site.js                  # centrální data (firma, služby, technika)
 app/globals.css              # styly
 ```
 
+## Blog (pro SEO)
+
+Blog je na adrese `/blog` (odkaz je v patičce v „Rychlé odkazy"). Každý článek je samostatná
+stránka s vlastním titulkem a popiskem – ideální pro postupné budování pozic ve vyhledávání.
+
+### Jak přidat nový článek
+
+1. Vytvořte nový soubor `content/blog/nazev-clanku.md` (název souboru = URL adresa článku).
+2. Na začátek vložte hlavičku a pod ni text v Markdownu:
+
+   ```markdown
+   ---
+   title: "Titulek článku"
+   description: "Krátký popis pro Google a náhledy (1–2 věty)."
+   date: "2026-06-25"
+   ---
+
+   ## Podnadpis
+
+   Text článku v Markdownu...
+   ```
+
+3. Commitněte a pushněte – článek se automaticky objeví na `/blog` i v `sitemap.xml`.
+
+Články může psát i AI – stačí dodržet formát hlavičky výše. Pro dobré SEO doporučujeme
+psát o konkrétních službách a lokalitách (např. „výkop základů v Říčanech").
+
 ## Přepínač designu (dočasné)
 
 Vpravo dole je tlačítko **🎨 Design** pro porovnání tří vzhledů:
