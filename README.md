@@ -116,30 +116,6 @@ stránka s vlastním titulkem a popiskem – ideální pro postupné budování 
 Články může psát i AI – stačí dodržet formát hlavičky výše. Pro dobré SEO doporučujeme
 psát o konkrétních službách a lokalitách (např. „výkop základů v Říčanech").
 
-## Přepínač designu (dočasné)
-
-Vpravo dole je tlačítko **🎨 Design** pro porovnání tří vzhledů:
-- **Design A** – moderní / minimalistický (výchozí)
-- **Design B** – editorial s patkovými nadpisy a krémovým laděním
-- **Design C** – jednoduchý, přehledný, mobile-first (spodní lišta s tlačítky na mobilu)
-
-Volba se ukládá do prohlížeče (localStorage) a platí na všech stránkách.
-
-### Jak vybraný design „zamknout" a přepínač odstranit
-
-Až se rozhodnete pro jednu variantu, feature jde odstranit ve 3 krocích:
-
-1. V `app/layout.jsx` smažte řádky s `DesignSwitcher` (import + `<DesignSwitcher />`)
-   a anti-FOUC `<script>` s `data-design`.
-2. Smažte soubor `components/DesignSwitcher.jsx`.
-3. V `app/globals.css`:
-   - **Pokud vyberete Design A:** smažte celý blok „PŘEPÍNAČ DESIGNU" i „DESIGN B".
-   - **Pokud vyberete Design B:** v bloku „DESIGN B" nahraďte selektor
-     `html[data-design="b"]` za `:root`/příslušné třídy (nebo mě požádejte a sloučím
-     styl natrvalo), a smažte blok „PŘEPÍNAČ DESIGNU".
-
-Po commitu a pushi zůstane web s jediným designem a bez jakékoli zmínky o přepínači.
-
 ## Doporučené další kroky
 
 - Založit a propojit **Google Business Profile** (zásadní pro lokální SEO).

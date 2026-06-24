@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Fab from "@/components/Fab";
-import DesignSwitcher from "@/components/DesignSwitcher";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -48,22 +47,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="cs">
       <body>
-        {/* Anti-FOUC: nastaví zvolený design ještě před vykreslením */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "try{var d=localStorage.getItem('design')||'a';document.documentElement.setAttribute('data-design',d);}catch(e){}",
-          }}
-        />
         <Header />
         <main>{children}</main>
         <Footer />
         <Fab />
-        {/* Design C: spodní lišta s velkými tlačítky pro mobil */}
-        <div className="mobile-bar only-c">
-          <a className="btn btn-dark" href={site.phoneHref}>☎ Zavolat</a>
-          <a className="btn btn-primary" href="/kontakt">Poptávka</a>
-        </div>
-        <DesignSwitcher />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
