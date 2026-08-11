@@ -8,6 +8,7 @@ const links = [
   { href: "/zemni-prace", label: "Zemní práce" },
   { href: "/technika", label: "Technika" },
   { href: "/reference", label: "Reference" },
+  { href: "/cenik", label: "Ceník" },
   { href: "/o-nas", label: "O nás" },
   { href: "/kontakt", label: "Kontakt" },
 ];
