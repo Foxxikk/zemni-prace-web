@@ -2,7 +2,7 @@ import { site } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap() {
-  const routes = ["", "/zemni-prace", "/technika", "/reference", "/blog", "/o-nas", "/kontakt", "/ochrana-osobnich-udaju"];
+  const routes = ["", "/zemni-prace", "/technika", "/reference", "/cenik", "/blog", "/o-nas", "/kontakt", "/ochrana-osobnich-udaju"];
   const now = new Date();
   const pages = routes.map((r) => ({
     url: `${site.url}${r}`,
