@@ -24,15 +24,6 @@ const cenik = [
   },
 ];
 
-const zahrnuje = [
-  "Stroj včetně obsluhy a paliva",
-  "Doprava stroje na stavbu a zpět",
-  "Doporučení vhodné techniky před zahájením prací",
-  "Účtování skutečně odpracovaných hodin",
-  "Dohoda o postupu prací přímo na místě",
-  "Základní úklid pracoviště po dokončení",
-];
-
 export default function Cenik() {
   return (
     <>
@@ -68,18 +59,6 @@ export default function Cenik() {
       </section>
 
       <section className="section section-alt">
-        <div className="container">
-          <p className="eyebrow">Co je v ceně</p>
-          <h2>Přehledně a bez skrytých položek</h2>
-          <ul className="checklist" style={{ marginTop: 24 }}>
-            {zahrnuje.map((z) => (
-              <li key={z}>{z}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section">
         <div className="container prose">
           <h2>Ostatní práce na poptávku</h2>
           <p>
