@@ -42,8 +42,8 @@ export async function POST(req) {
   `;
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.MAIL_TO;
-  const from = process.env.MAIL_FROM;
+  const to = process.env.MAIL_TO || "krukbabice@gmail.com";
+  const from = process.env.MAIL_FROM || "Poptavka z webu <onboarding@resend.dev>";
 
   // Pokud e-mail zatím není nakonfigurován, poptávku jen zalogujeme a vrátíme úspěch,
   // aby web fungoval i před nastavením domény/klíče (viz README).
