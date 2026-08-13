@@ -1,0 +1,93 @@
+/* Cookie lišta + diskrétní tlačítko pro zněnu nastavení souhlasu. */
+
+.cookiebar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: #0f1115;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.cookiebar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+.cookiebar p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cookiebar a {
+  color: #ffd24a;
+  text-decoration: underline;
+}
+
+.cookiebar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookiebar .btn {
+  padding: 9px 16px;
+  font-size: 14px;
+  line-height: 1.2;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+}
+
+.cookiebar .btn:hover {
+  border-color: #fff;
+}
+
+.cookiebar .btn-primary {
+  background: #ffd24a;
+  border-color: #ffd24a;
+  color: #14161a;
+  font-weight: 600;
+}
+
+.cookie-reopen {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 90;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.cookie-reopen:hover {
+  background: #fff;
+}
+
+/* Aby lišta nepřekrývala plovoucí tlačítko Zavolat. */
+body.has-cookiebar .fab {
+  bottom: 170px;
+}
+
+@media (max-width: 560px) {
+  .cookiebar-actions {
+    flex-direction: column;
+  }
+  .cookiebar .btn {
+    width: 100%;
+  }
+  body.has-cookiebar .fab {
+    bottom: 250px;
+  }
+}
