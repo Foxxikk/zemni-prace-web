@@ -26,7 +26,7 @@ export default function PoptavkaOdeslana() {
       <section className="section">
         <div className="container">
           <div className="alert alert-ok">
-            Co bude dál: projdeme si zadání, případně se douptáme na detaily a připravíme pro vás
+            Co bude dál: projdeme si zadání, případně se doptáme na detaily a připravíme pro vás
             nezávaznou cenovou nabídku.
           </div>
 
