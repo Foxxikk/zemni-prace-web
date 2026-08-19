@@ -1,6 +1,7 @@
 # Checklist po merge – zprovoznění poptávek a měření
+**HOSTING: HOSTINGER (hPanel).** Web se hostuje na Hostingeru – tam je i doména a DNS. Vercel byl jen původní deploy při vývoji a už se nepoužívá; všechny env proměnné a buildy řeš v hPanelu Hostingeru.
 
-## 1. Env proměnné ve Vercelu (Production + Preview)
+## 1. Env proměnné na Hostingeru (hPanel)
 
 | Proměnná | Hodnota | Povinné |
 |---|---|---|
@@ -8,14 +9,14 @@
 | `MAIL_TO` | krukbabice@gmail.com | ANO |
 | `MAIL_FROM` | Poptávka z webu <poptavka@zemniprace-prahavychod.cz> | ANO |
 | `NEXT_PUBLIC_SITE_URL` | https://zemniprace-prahavychod.cz | ANO |
-| `NEXT_PUBLIC_GA_ID` | G-XXXXXXXXXX | pro měření |
+| NEXT_PUBLIC_GA_ID | G-X0F1GY7JX5 | HOTOVO – fallback je i v lib/tracking.js |
 | `LEAD_WEBHOOK_URL` | webhook do Google Sheetu | doporučeno |
 | `NEXT_PUBLIC_GADS_ID` | AW-XXXXXXXXX | až s Google Ads |
 | `NEXT_PUBLIC_GADS_LABEL_FORM` | label konverze formuláře | až s Google Ads |
 | `NEXT_PUBLIC_GADS_LABEL_TEL` | label konverze telefonu | až s Google Ads |
 | `NEXT_PUBLIC_GADS_LABEL_MAIL` | label konverze e-mailu | až s Google Ads |
 
-Po přidání proměnných je nutný **nový deploy** (Vercel je nenačte do buďeného buildu).
+Po přidání proměnných je nutný **nový build a restart aplikace na Hostingeru** – do už hotového buildu se nové hodnoty nenapíší.
 
 ## 2. Resend – doručitelnost
 
@@ -23,10 +24,10 @@ Po přidání proměnných je nutný **nový deploy** (Vercel je nenačte do bu�
 - Doporučený DMARC: `v=DMARC1; p=none; rua=mailto:krukbabice@gmail.com`
 - Dokud doména není ověřená, e-maily půjdou z `onboarding@resend.dev` a padají do spamu.
 
-## 3. Vercel – deploy a doména
+## 3. Hostinger – deploy a doména
 
-- Zkontrolovat, že je zapnutá GitHub integrace a auto-deploy z `main`.
-  (Zjištěno při auditu: produkce běžela na starším kódu než repozitář.)
+- Produkce běží na **Hostingeru** (hPanel). Zkontrolovat, že je zapnuté nasazování z GitHubu z branch main a že poslední build proběhl bez chyby.
+    (Historie: web začínal na Vercelu, ale produkce včetně domény a DNS je už na Hostingeru. Vercel se neřeší.)
 - Nastavit jednosměrný redirect mezi `www` a variantou bez `www`.
 
 ## 4. Akceptační testy
@@ -42,8 +43,8 @@ Po přidání proměnných je nutný **nový deploy** (Vercel je nenačte do bu�
 
 ## 5. GA4 a Search Console
 
-- Založit GA4 property (časová zóna Praha, měna CZK), získat `G-XXXXXXXXXX`.
-- Označit `generate_lead` a `click_to_call` jako klíčové události.
+- HOTOVO: GA4 property zemniprace-prahavychod.cz (Časová zóna Praha, měna CZK), web stream "Zemní práce Praha-východ – web", measurement ID **G-X0F1GY7JX5**.
+- Označit generate_lead a click_to_call jako klíčové události – lze teprve až první data dojdou (GA4 dovolí dát hvězdičku jen už existující události).
 - Search Console: verifikace přes DNS TXT, vložit sitemap, propojit s GA4.
 
 ## 6. Co ještě chybí (není v této PR)
