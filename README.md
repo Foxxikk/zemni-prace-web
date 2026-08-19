@@ -1,7 +1,7 @@
 # Web – Zemní a výkopové práce (MVP)
 
 Moderní prezentační web pro firmu poskytující zemní a výkopové práce v okrese Praha-východ.
-Postaveno na **Next.js (App Router)**, připraveno k nasazení na **Vercel**.
+Postaveno na **Next.js (App Router)**. **Hosting: Hostinger (hPanel)** – tam je i doména a DNS. Vercel byl jen první deploy při vývoji a už se nepoužívá.
 
 ## Co web obsahuje
 
@@ -26,13 +26,13 @@ npm run dev                  # http://localhost:3000
 Bez nastavených e-mailových proměnných web funguje i tak – poptávka se zaloguje do konzole serveru
 a formulář vrátí potvrzení. E-mail se začne odesílat po doplnění proměnných níže.
 
-## Nasazení na Vercel
+## Nasazení na Hostingeru
 
-1. Nahrajte projekt do Git repozitáře (GitHub / GitLab).
-2. Na [vercel.com](https://vercel.com) zvolte **Add New → Project** a importujte repozitář.
-   Vercel Next.js detekuje sám – žádné další nastavení buildu netřeba.
-3. V **Project → Settings → Environment Variables** přidejte proměnné (viz níže).
-4. Deploy. Poté v **Settings → Domains** připojte vlastní doménu.
+1. Kód je v tomto GitHub repozitáři, produkční branch je main.
+2. Hostinger (hPanel) nasazuje web z tohoto repozitáře – po pushi do main proběhne build aplikace.
+   Build: npm install + npm run build, start: npm start (Next.js server).
+3. Env proměnné (viz níže) se nastavují v hPanelu u aplikace; po změně je nutný nový build a restart.
+4. Doména zemniprace-prahavychod.cz a DNS se spravují také na Hostingeru (hPanel).
 
 ## Proměnné prostředí (Environment Variables)
 
@@ -42,13 +42,14 @@ a formulář vrátí potvrzení. E-mail se začne odesílat po doplnění promě
 | `MAIL_FROM` | Odesílatel na **ověřené doméně**, např. `Poptávka <poptavka@vase-domena.cz>` |
 | `MAIL_TO` | Kam chodí poptávky (firemní e-mail); více adres oddělte čárkou |
 | `NEXT_PUBLIC_SITE_URL` | Veřejná URL webu (pro sitemap a metadata) |
+| NEXT_PUBLIC_GA_ID | GA4 measurement ID – aktuálně G-X0F1GY7JX5 (fallback je i v lib/tracking.js) |
 
 ### Napojení e-mailu na doménu (Resend)
 
 1. Založte účet na **Resend** a v sekci **Domains** přidejte svoji doménu.
 2. Resend vám vypíše DNS záznamy (SPF, DKIM) – přidejte je u svého správce domény.
    Po ověření můžete posílat z adres `@vase-domena.cz`.
-3. Vytvořte **API Key** a vložte ho do `RESEND_API_KEY` na Vercelu.
+3. Vytvořte **API Key** a vložte ho do RESEND_API_KEY na Hostingeru (hPanel).
 4. Nastavte `MAIL_FROM` na adresu na ověřené doméně a `MAIL_TO` na firemní schránku.
 
 > Alternativa: lze použít i jinou službu (Postmark, SendGrid) – stačí upravit `app/api/poptavka/route.js`.
@@ -119,5 +120,5 @@ psát o konkrétních službách a lokalitách (např. „výkop základů v Ř�
 ## Doporučené další kroky
 
 - Založit a propojit **Google Business Profile** (zásadní pro lokální SEO).
-- Přidat **Google Analytics 4** + měření konverzí (odeslání formuláře, proklik na telefon).
+- **Google Analytics 4** je nasazené (ID G-X0F1GY7JX5), měří se i konverze generate_lead a click_to_call.
 - Doplnit reálné fotky techniky a realizací.
