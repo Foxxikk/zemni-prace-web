@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Logo Kruk &amp; Co s.r.o. - export PNG</title>
+<title>Logo Kruk &amp; Co s.r.o. – export PNG</title>
 <style>
   body{font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7f8;color:#1A1D21;margin:0;padding:32px 20px 80px}
-  .wrap{max-width:860px;margin:0 auto}
-  h1{font-size:26px;margin:0 0 6px}
-  h2{font-size:17px;margin:32px 0 10px;text-transform:uppercase;letter-spacing:1px;color:#6B7280}
+  .wrap{max-width:880px;margin:0 auto}
+  h1{font-size:27px;margin:0 0 6px}
+  h2{font-size:16px;margin:34px 0 10px;text-transform:uppercase;letter-spacing:1px;color:#6B7280}
   p{color:#4B5563;margin:0 0 18px}
   .row{display:flex;flex-wrap:wrap;gap:10px}
   button{cursor:pointer;border:1px solid #d7dbdf;background:#fff;border-radius:10px;padding:11px 16px;font:600 15px system-ui,Arial,sans-serif;color:#1A1D21}
@@ -20,22 +20,22 @@
 </head>
 <body><div class="wrap">
 <h1>Logo Kruk &amp; Co s.r.o.</h1>
-<p>Klikni na kterekoli tlacitko a obrazek se stahne do PC jako PNG v presnem rozmeru.</p>
+<p>Klikněte na kterékoli tlačítko a obrázek se stáhne do počítače jako PNG v přesném rozměru.</p>
 <div class="prev" id="prev"></div>
-<h2>Logo - ctverec (Google, Facebook, profilovka)</h2>
+<h2>Logo – čtverec (Google, Facebook, profilová fotka)</h2>
 <div class="row" id="r1"></div>
-<h2>Logo - pruhledne pozadi (dokumenty, faktury)</h2>
+<h2>Logo – průhledné pozadí (faktury, dokumenty, Word)</h2>
 <div class="row" id="r2"></div>
-<h2>Banner (Firmy.cz branding, hlavicka)</h2>
+<h2>Banner (Firmy.cz branding, hlavička, Facebook cover)</h2>
 <div class="row" id="r3"></div>
-<h2>Vektor (nejlepsi kvalita, pro tiskarnu a polepy)</h2>
+<h2>Vektor – nejlepší kvalita (tiskárna, polep auta, cedule)</h2>
 <div class="row">
   <button onclick="location.href='/logo-mark.svg'">logo-mark.svg</button>
   <button onclick="location.href='/logo-mark-amber.svg'">logo-mark-amber.svg</button>
-  <button onclick="location.href='/logo.svg'">logo.svg (s nazvem)</button>
+  <button onclick="location.href='/logo.svg'">logo.svg (s názvem firmy)</button>
 </div>
-<h2>Barvy</h2>
-<div class="note">Zluta <b>#F5A623</b> &nbsp;|&nbsp; Tmava <b>#1A1D21</b>. Tyto dve barvy pouzivej vsude - web, vizitky, polep auta.</div>
+<h2>Firemní barvy</h2>
+<div class="note">Žlutá <b>#F5A623</b> &nbsp;|&nbsp; Tmavá <b>#1A1D21</b>. Tyto dvě barvy používejte všude – web, vizitky, polep auta, cedule.</div>
 </div>
 <canvas id="cv" style="display:none"></canvas>
 <script>
@@ -69,15 +69,15 @@ async function banner(w,h){
   x.fillStyle="#FFFFFF";x.font="800 "+Math.round(h*0.28)+"px system-ui,Arial,sans-serif";
   x.fillText("Kruk & Co s.r.o.",tx,h*0.45);
   x.fillStyle=AM;x.font="700 "+Math.round(h*0.125)+"px system-ui,Arial,sans-serif";
-  x.fillText("ZEMNI A VYKOPOVE PRACE \u00B7 PRAHA-VYCHOD",tx,h*0.65);
+  x.fillText("ZEMNÍ A VÝKOPOVÉ PRÁCE · PRAHA-VÝCHOD",tx,h*0.65);
   x.fillStyle="#C9CDD2";x.font="600 "+Math.round(h*0.115)+"px system-ui,Arial,sans-serif";
-  x.fillText("+420 774 248 497 \u00B7 zemniprace-prahavychod.cz",tx,h*0.85);
+  x.fillText("+420 774 248 497 · zemniprace-prahavychod.cz",tx,h*0.85);
   dl(cv,"kruk-co-banner-"+w+"x"+h+".png");
 }
 function mk(el,label,fn){var b=document.createElement("button");b.textContent=label;b.onclick=fn;document.getElementById(el).appendChild(b);}
-[512,1024,2048].forEach(function(s){mk("r1","PNG "+s+"x"+s,function(){square(s,false)})});
-[512,1024,2048].forEach(function(s){mk("r2","PNG "+s+"x"+s,function(){square(s,true)})});
-[[1920,400],[960,240],[640,192],[2560,640]].forEach(function(d){mk("r3","PNG "+d[0]+"x"+d[1],function(){banner(d[0],d[1])})});
+[512,1024,2048].forEach(function(s){mk("r1","PNG "+s+"×"+s,function(){square(s,false)})});
+[512,1024,2048].forEach(function(s){mk("r2","PNG "+s+"×"+s,function(){square(s,true)})});
+[[1920,400],[960,240],[640,192],[2560,640]].forEach(function(d){mk("r3","PNG "+d[0]+"×"+d[1],function(){banner(d[0],d[1])})});
 document.getElementById("prev").innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 37 111 67" width="300" height="181">'+art(AM,INK)+'</svg>';
 </script>
 </body></html>
