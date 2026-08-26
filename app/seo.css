@@ -103,3 +103,25 @@
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- obrazky v clancich blogu ---------- */
+.post-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 28px 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.post-body h2 {
+  margin-top: 34px;
+}
+
+.post-body ol {
+  padding-left: 20px;
+}
+
+.post-body ol li {
+  margin-bottom: 8px;
+}
