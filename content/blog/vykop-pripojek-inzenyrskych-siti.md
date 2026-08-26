@@ -33,3 +33,14 @@ Běžná přípojka na rodinném domě je obvykle otázkou jednoho až tří dn�
 ## Poptejte výkop přípojky
 
 Výkopy přípojek vody, kanalizace, plynu i elektřiny provádíme vlastní technikou v Říčanech a okolí – Světice, Tehov, Strančice, Mnichovice, Mukařov, Babice, Kamenice, Velké Popovice, Úvaly, Škvorec, Šestajovice, Kostelec nad Černými lesy – a v celém okrese Praha-východ. Napište nám rozsah prací a rádi vám připravíme nezávaznou nabídku.
+
+![Výkopy pro inženýrské sítě](/reference/03-pripojky-site.webp)
+
+## Související
+
+- [Přípojky inženýrských sítí](/sluzby/pripojky-inzenyrskych-siti)
+- [Výkopy základů rodinných domů](/sluzby/vykopy-zakladu)
+- [Drenáže a odvodnění](/sluzby/drenaze-a-odvodneni)
+- [Zemní práce v Šestajovicích](/zemni-prace/sestajovice)
+
+Máte vytyčené sítě a chcete termín? Zavolejte na **+420 774 248 497** nebo pošlete [nezávaznou poptávku](/kontakt).
