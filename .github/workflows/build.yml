@@ -1,0 +1,32 @@
+# Overi, ze se web da sestavit (npm run build).
+# Vysledek se ukazuje jako zelena fajfka / cerveny krizek u pull requestu.
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: next build
+    runs-on: ubuntu-latest
+    env:
+      # Falesne hodnoty jen pro sestaveni, nic se neposila.
+      RESEND_API_KEY: re_build_check_dummy
+      MAIL_TO: krukbabice@gmail.com
+      MAIL_FROM: web@zemniprace-prahavychod.cz
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalace zavislosti
+        run: npm ci --no-audit --no-fund
+
+      - name: Sestaveni webu
+        run: npm run build
