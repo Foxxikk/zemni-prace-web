@@ -37,3 +37,19 @@ V suchém období se pracuje rychleji a čistěji. Práce v dlouhotrvajícím de
 ## Jak získat srovnatelnou nabídku
 
 Nejlépe se cena určuje po krátké obhlídce na místě, kde je vidět přístup, terén i prostor pro deponii. Připravte si informaci o rozměrech výkopu, požadovaném termínu a o tom, zda máte kam uložit zeminu. Zemní a výkopové práce děláme v Říčanech a okolí – Mukařov, Světice, Strančice, Mnichovice, Babice, Velké Popovice, Kamenice, Úvaly, Škvorec, Kostelec nad Černými lesy – a v celém okrese Praha-východ.
+
+
+![Zemní práce na stavbě v okolí Babic u Říčan](/reference/06-zemni-prace-stavba.webp)
+
+## Co si z toho odnést
+
+Cena zemních prací není jedno číslo z tabulky. Skládá se z objemu výkopu, podloží, dopravy techniky, ručních dokopávek a toho, kam půjde zemina. Nejlevnější nabídka bývá ta, která tyhle věci pojmenuje dopředu – ne ta, která je zamlčí.
+
+## Související
+
+- [Bagr s obsluhou – hodinové zemní práce](/sluzby/bagr-s-obsluhou)
+- [Odvoz zeminy a suti](/sluzby/odvoz-zeminy-a-sute)
+- [Náš ceník](/cenik)
+- [Zemní práce v Říčanech](/zemni-prace/ricany)
+
+Chcete konkrétní cenu pro váš pozemek? Zavolejte na **+420 774 248 497** nebo napište přes [nezávaznou poptávku](/kontakt) – ozveme se do 24 hodin.

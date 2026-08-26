@@ -33,3 +33,15 @@ Drenáže se nejlépe dělají v suchém období, kdy je rýha stabilní a techn
 ## Pojďme se na to podívat
 
 Odvodnění pozemku, výkopy drenáží i svodů děláme v Říčanech a okolí – Světice, Tehov, Doubek, Mukařov, Louňovice, Strančice, Všestary, Kunice, Čestlice, Nupaky – a v celém okrese Praha-východ. Napište nám, jak se voda na pozemku chová, a navrhneme řešení.
+
+
+![Výkop drenážní rýhy u rodinného domu](/reference/01-vykop-ryhy.webp)
+
+## Související
+
+- [Drenáže, odvodnění a základy plotů](/sluzby/drenaze-a-odvodneni)
+- [Přípojky inženýrských sítí](/sluzby/pripojky-inzenyrskych-siti)
+- [Terénní úpravy a spádování zahrady](/sluzby/terenni-upravy)
+- [Zemní práce v Mukařově](/zemni-prace/mukarov)
+
+Máte u domu vodu i po slabším dešti? Zavolejte na **+420 774 248 497**, přijedeme se podívat a řekneme, co má reálně smysl. Nebo napište přes [nezávaznou poptávku](/kontakt).

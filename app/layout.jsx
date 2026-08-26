@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./cookiebar.css";
+import "./seo.css";
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,7 +22,7 @@ export const metadata = {
     "zemní práce Praha-východ",
     "výkopové práce Praha-východ",
     "výkopy základů",
-    "hloubeni bazénů",
+    "hloubení bazénů",
     "přípojky inženýrských sítí",
     "terénní úpravy",
     "bagr s obsluhou Praha-východ",

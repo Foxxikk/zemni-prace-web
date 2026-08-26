@@ -33,3 +33,14 @@ Minirypadlo o hmotnosti 3,5 t projede i úzkým vjezdem a s minimálním zábore
 ## Nevíte si rady? Přijedeme se podívat
 
 Nejrychlejší cesta je krátká obhlídka na místě. Navrhneme umístění jámy, vhodný stroj i postup prací a rovnou dostanete orientační cenu. Zemní a výkopové práce provádíme v Říčanech a okolí – Mukařov, Světice, Strančice, Tehov, Babice, Velké Popovice, Mnichovice, Kamenice, Kostelec nad Černými lesy, Úvaly, Šestajovice – a v celém okrese Praha-východ.
+
+![Výkopové práce pásovým rypadlem pro bazén](/reference/11-vykop-rypadlem.webp)
+
+## Související
+
+- [Bazény a jezírka – výkop jámy](/sluzby/bazeny-a-jezirka)
+- [Terénní úpravy okolí bazénu](/sluzby/terenni-upravy)
+- [Odvoz vykopané zeminy](/sluzby/odvoz-zeminy-a-sute)
+- [Zemní práce v Mnichovicích](/zemni-prace/mnichovice)
+
+Máte vybrané místo a chcete vědět, co bude výkop stát? Zavolejte na **+420 774 248 497** nebo pošlete [nezávaznou poptávku](/kontakt).
