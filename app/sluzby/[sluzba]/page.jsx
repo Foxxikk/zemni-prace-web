@@ -69,7 +69,7 @@ export default async function SluzbaPage({ params }) {
       <div className="page-head">
         <div className="container">
           <Breadcrumbs
-            items={[{ name: "Zemní práce", href: "/zemni-prace" }, { name: s.title }]}
+            items={[{ name: "Služby", href: "/sluzby" }, { name: s.title }]}
           />
           <h1>{s.h1}</h1>
           <p className="lead">{s.intro}</p>
