@@ -6,6 +6,8 @@ date: "2026-08-11"
 
 Po dokončení stavby vypadá pozemek obvykle jako rozjezděné staveniště. Terénní úpravy jsou krok, který z něj udělá zahradu – a zároveň rozhodne o tom, kam bude odtékat voda a jak se bude trávník chovat za pět let. Tady je postup, který se v praxi osvědčil.
 
+![Terénní úpravy zahrady a modelace terénu](/reference/08-terenni-upravy.webp)
+
 ## 1. Vyčištění pozemku a hrubé srovnání
 
 Nejdřív z pozemku zmizí stavební suť, zbytky betonů, kořeny a nálety. Teprve potom je vidět skutečný terén a dá se rozhodnout, kolik materiálu bude třeba přidat nebo odvezt. Na tomto kroku se nevyplácí šetřit – suť ponechaná pod ornicí se později projeví suchými flekami v trávníku.
@@ -26,6 +28,8 @@ U pozemků ve sklonu je potřeba rozhodnout, zda se výškový rozdíl vyřeší
 
 Pod dlažbu, příjezdovou cestu i pod základy plotu se podloží hutní po vrstvách. Naopak pod trávník a záhony se půda nadměrně hutnit nemá – zabraňuje to zakořenění a vsakování vody. Rozdělení ploch podle budoucího využití je proto součástí plánování.
 
+![Rozprostření zeminy po pozemku](/reference/09-rozprostreni-zeminy.webp)
+
 ## 6. Kam s přebytečnou zeminou
 
 Přebytečná zemina je častá položka rozpočtu. Část se obvykle dá využít na dorovnání nižších částí pozemku nebo na modelaci valu, který zahradu oddělí od cesty. Zbytek odvezeme a zlikvidujeme, vždy s dokladem o uložení.
@@ -37,3 +41,14 @@ Nejvíc rozhoduje množství přemístěné zeminy, dostupnost pozemku pro techn
 ## Chcete zahradu rovnou a bez kaluží?
 
 Terénní úpravy, svahování, rozprostření ornice i hutnění provádíme vlastní technikou v Říčanech a okolí – Mukařov, Světice, Strančice, Mnichovice, Babice, Kamenice, Velké Popovice, Čestlice, Úvaly – a v celém okrese Praha-východ. Ozvěte se nám a dohodneme obhlídku.
+
+## Související
+
+- [Terénní úpravy](/sluzby/terenni-upravy)
+- [Drenáže a odvodnění](/sluzby/drenaze-a-odvodneni)
+- [Odvoz zeminy a suti](/sluzby/odvoz-zeminy-a-sute)
+- [Bagr s obsluhou](/sluzby/bagr-s-obsluhou)
+- [Kolik stojí odvoz a likvidace zeminy](/blog/kolik-stoji-odvoz-a-likvidace-zeminy)
+- [Kolik stojí hodina bagru s obsluhou](/blog/kolik-stoji-hodina-bagru)
+- [Zemní práce Praha-východ](/zemni-prace)
+- [Případové studie z našich zakázek](/reference)
