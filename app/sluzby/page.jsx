@@ -18,7 +18,7 @@ export default function SluzbyPage() {
       <div className="page-head">
         <div className="container">
           <Breadcrumbs
-            items={[{ name: "Zemní práce", href: "/zemni-prace" }, { name: "Přehled služeb" }]}
+            items={[{ name: "Služby" }]}
           />
           <h1>Přehled služeb</h1>
           <p className="lead">
