@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Logo Kruk &amp; Co s.r.o. - export PNG</title>
+<style>
+  body{font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7f8;color:#1A1D21;margin:0;padding:32px 20px 80px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px}
+  h2{font-size:17px;margin:32px 0 10px;text-transform:uppercase;letter-spacing:1px;color:#6B7280}
+  p{color:#4B5563;margin:0 0 18px}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+  button{cursor:pointer;border:1px solid #d7dbdf;background:#fff;border-radius:10px;padding:11px 16px;font:600 15px system-ui,Arial,sans-serif;color:#1A1D21}
+  button:hover{background:#F5A623;border-color:#F5A623}
+  .prev{margin:24px 0;padding:18px;background:#1A1D21;border-radius:14px;display:flex;justify-content:center}
+  .note{background:#fff8e8;border:1px solid #F5A623;border-radius:10px;padding:14px 16px;color:#3f3524}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Logo Kruk &amp; Co s.r.o.</h1>
+<p>Klikni na kterekoli tlacitko a obrazek se stahne do PC jako PNG v presnem rozmeru.</p>
+<div class="prev" id="prev"></div>
+<h2>Logo - ctverec (Google, Facebook, profilovka)</h2>
+<div class="row" id="r1"></div>
+<h2>Logo - pruhledne pozadi (dokumenty, faktury)</h2>
+<div class="row" id="r2"></div>
+<h2>Banner (Firmy.cz branding, hlavicka)</h2>
+<div class="row" id="r3"></div>
+<h2>Vektor (nejlepsi kvalita, pro tiskarnu a polepy)</h2>
+<div class="row">
+  <button onclick="location.href='/logo-mark.svg'">logo-mark.svg</button>
+  <button onclick="location.href='/logo-mark-amber.svg'">logo-mark-amber.svg</button>
+  <button onclick="location.href='/logo.svg'">logo.svg (s nazvem)</button>
+</div>
+<h2>Barvy</h2>
+<div class="note">Zluta <b>#F5A623</b> &nbsp;|&nbsp; Tmava <b>#1A1D21</b>. Tyto dve barvy pouzivej vsude - web, vizitky, polep auta.</div>
+</div>
+<canvas id="cv" style="display:none"></canvas>
+<script>
+var INK="#1A1D21", AM="#F5A623";
+function art(fg,det){return '<rect x="10" y="86" width="61" height="16" rx="8" fill="'+fg+'"/>'
++'<circle cx="22" cy="94" r="2.6" fill="'+det+'"/><circle cx="40" cy="94" r="2.6" fill="'+det+'"/><circle cx="58" cy="94" r="2.6" fill="'+det+'"/>'
++'<path d="M17 84 V66 Q17 60 23 60 H38 L45 47 H58 Q63 47 63 53 V84 Z" fill="'+fg+'"/>'
++'<path d="M43.5 58 L48.5 49 H56 V58 Z" fill="'+det+'"/>'
++'<path d="M62 70 L86 44" stroke="'+fg+'" stroke-width="10" stroke-linecap="round"/>'
++'<path d="M86 44 L96 67" stroke="'+fg+'" stroke-width="9" stroke-linecap="round"/>'
++'<g transform="translate(99 73) rotate(12)" fill="'+fg+'"><path d="M-13 -10 H14 L10 6 H-9 Z"/><path d="M-7.5 6 h6 l-3 8.5 z"/><path d="M-0.5 6 h6 l-3 8.5 z"/><path d="M6.5 6 h5.5 l-2.75 8.5 z"/></g>';}
+function svgTight(fg,det){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 37 111 67">'+art(fg,det)+'</svg>';}
+function svgTile(){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="'+INK+'"/>'+art(AM,INK)+'</svg>';}
+function load(svg){return new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);});}
+function dl(cv,name){cv.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();},"image/png");}
+async function square(size,transparent){
+  var cv=document.getElementById("cv");cv.width=size;cv.height=size;var x=cv.getContext("2d");
+  x.clearRect(0,0,size,size);
+  if(transparent){var im=await load(svgTile());x.drawImage(im,0,0,size,size);}
+  else{x.fillStyle=INK;x.fillRect(0,0,size,size);var im2=await load(svgTight(AM,INK));var w=size*0.72,h=w*67/111;x.drawImage(im2,(size-w)/2,(size-h)/2,w,h);}
+  dl(cv,"kruk-co-logo-"+size+(transparent?"-pruhledne":"")+".png");
+}
+async function banner(w,h){
+  var cv=document.getElementById("cv");cv.width=w;cv.height=h;var x=cv.getContext("2d");
+  x.fillStyle=INK;x.fillRect(0,0,w,h);
+  var im=await load(svgTight(AM,INK));
+  var pad=h*0.20, mh=h-2*pad, mw=mh*111/67;
+  x.drawImage(im,pad,pad,mw,mh);
+  var tx=pad+mw+h*0.16;
+  x.textBaseline="alphabetic";
+  x.fillStyle="#FFFFFF";x.font="800 "+Math.round(h*0.28)+"px system-ui,Arial,sans-serif";
+  x.fillText("Kruk & Co s.r.o.",tx,h*0.45);
+  x.fillStyle=AM;x.font="700 "+Math.round(h*0.125)+"px system-ui,Arial,sans-serif";
+  x.fillText("ZEMNI A VYKOPOVE PRACE \u00B7 PRAHA-VYCHOD",tx,h*0.65);
+  x.fillStyle="#C9CDD2";x.font="600 "+Math.round(h*0.115)+"px system-ui,Arial,sans-serif";
+  x.fillText("+420 774 248 497 \u00B7 zemniprace-prahavychod.cz",tx,h*0.85);
+  dl(cv,"kruk-co-banner-"+w+"x"+h+".png");
+}
+function mk(el,label,fn){var b=document.createElement("button");b.textContent=label;b.onclick=fn;document.getElementById(el).appendChild(b);}
+[512,1024,2048].forEach(function(s){mk("r1","PNG "+s+"x"+s,function(){square(s,false)})});
+[512,1024,2048].forEach(function(s){mk("r2","PNG "+s+"x"+s,function(){square(s,true)})});
+[[1920,400],[960,240],[640,192],[2560,640]].forEach(function(d){mk("r3","PNG "+d[0]+"x"+d[1],function(){banner(d[0],d[1])})});
+document.getElementById("prev").innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 37 111 67" width="300" height="181">'+art(AM,INK)+'</svg>';
+</script>
+</body></html>
